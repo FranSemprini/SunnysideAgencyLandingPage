@@ -1,5 +1,46 @@
+@mixin resets {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 @mixin bgImgProp {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@mixin myFlex ($diplay, $flex-direcion, $wrap, $justify-content, $align-items) {
+    display: $diplay;
+    flex-direction: $flex-direcion;
+    flex-wrap: $wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin respPhoto {
+    width: 100%;
+    height: auto;
+}
+
+$fontFamilies : (
+    barlow: 'Barlow',
+    fraunces: 'Fraunces'
+);
+
+$pColors : (
+ Soft_red: hsla(7, 99%, 70%, 0.093),
+ Yellow: hsl(51, 100%, 49%),
+ Dark_desaturated_cyan: hsl(167, 40%, 24%),
+ Dark_blue: hsl(198, 62%, 26%),
+ Dark_moderate_cyan: hsl(168, 34%, 66%)
+);
+
+$nColors : (
+ Very_dark_desaturated_blue: hsl(212, 27%, 19%),
+ Very_dark_grayish_blue: hsl(213, 9%, 39%),
+ Dark_grayish_blue: hsl(232, 10%, 55%),
+ Grayish_blue: hsl(210, 4%, 67%),
+ White: hsl(0, 0%, 100%)
+);
