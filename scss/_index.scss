@@ -1,93 +1,118 @@
 main {
     .main__headerImg {
-        background-image: url("../images/mobile/image-header.jpg");
-        @include bgImgProp;
-        height: 60vh;
+        // background-image: url("../images/mobile/image-header.jpg");
+        // @include bgImgProp;
+        // height: 60vh;
 
         .headerImg__header {
             @include myFlex(flex, row, nowrap, space-between, baseline);
-            padding: 1rem;
+            display: grid;
+            position: relative;
+            grid-template-columns: 1fr;
+            grid-template-rows: 20% 35%;
+            grid-template-areas:
+            "."
+            "title"
+            "arrow";
 
-            h1 {
-                color: white;
-                font-family: map-get($fontFamilies, fraunces);
-                font-weight: 900;
-                font-size: 1.5rem;
+            .header__background {
+                width: 100%;
+                height: auto;
+                position: relative;
+
             }
 
-            nav {
-                .menu {
-                    position: fixed;
-                    transform: translateX(100%);
-                    transition: transform 0.2s;
-                    top: 105px;
-                    left: 50px;
-                    right: 0;
-                    height: 250px;
-                    background: white;
-                    color: map-get($nColors , Very_dark_grayish_blue );
-                    list-style: none;
-                    li {
-                        @include myFlex (flex, column, nowrap, center, center);
-                        color: map-get($nColors, Dark_grayish_blue);
-                        font-family: map-get($fontFamilies, barlow);
-                        margin: 30px 0;
+            .header__container {
+                position: absolute;
+                @include myFlex (flex, row, nowrap, space-between, baseline);
+                width: 100%;
+
+                .header__title {
+                    color: white;
+                    font-family: map-get($fontFamilies, fraunces);
+                    font-weight: 900;
+                    font-size: 1.5rem;
+                    padding: 1rem 0 0 1rem;
+                }
+
+                nav {
+                    .menu {
+                        position: fixed;
+                        transform: translateX(100%);
+                        transition: transform 0.2s;
+                        top: 105px;
+                        left: 50px;
+                        right: 0;
+                        height: 250px;
+                        background: white;
+                        color: map-get($nColors, Very_dark_grayish_blue);
+                        list-style: none;
+
+                        li {
+                            @include myFlex (flex, column, nowrap, center, center);
+                            color: map-get($nColors, Dark_grayish_blue);
+                            font-family: map-get($fontFamilies, barlow);
+                            margin: 30px 0;
+                        }
+
+                        .contact {
+                            background-color: map-get($pColors, Yellow);
+                            border-radius: 22px;
+                            margin: 0 80px;
+                            padding: 14px 0;
+                            color: black;
+                            text-transform: uppercase;
+                            font-family: map-get($fontFamilies, fraunces);
+                            font-size: 0.8rem;
+
+                        }
                     }
-                    .contact {
-                        background-color: map-get($pColors, Yellow);
-                        border-radius: 22px;
-                        margin: 0 80px;
-                        padding: 14px 0;
-                        color: black;
-                        text-transform: uppercase;
-                        font-family: map-get($fontFamilies, fraunces);
-                        font-size: 0.8rem;
 
+                    .showMenu {
+                        transform: translatex(-25px);
                     }
                 }
-                .showMenu {
-                    transform: translatex(-25px);
-                  }
-            }
 
-            .hamburger {
-                
-                z-index: 100;
-                border: none;
-                background-color: unset;
-                right: 1rem;
-                padding: 4px;
-                cursor: pointer;
-                img {
-                    width: 25px;
-                }
-     
-                .hamburger--opened {
-                    display: none;
-                    opacity: 0.5;
+                .hamburger {
+                    z-index: 100;
+                    border: none;
+                    background-color: unset;
+                    right: 1rem;
+                    cursor: pointer;
+                    padding: 1rem 1rem 0 0;
+
+                    img {
+                        width: 25px;
+                    }
+
+                    .hamburger--opened {
+                        display: none;
+                        opacity: 0.5;
+                    }
+
                 }
 
             }
-
+        }
+        .header__text {
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-family: map-get($fontFamilies, fraunces);
+            letter-spacing: 10px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            position: absolute;
+            grid-area: title;
         }
 
-        .main__titleArrow {
-            @include myFlex(flex, column, nowrap, center, center);
-
-            h1 {
-                color: white;
-                text-transform: uppercase;
-                text-align: center;
-                font-size: 2rem;
-                font-family: map-get($fontFamilies, fraunces);
-                letter-spacing: 10px;
-                margin-top: 25px;
-            }
-
-            img {
-                margin-top: 60px;
-                width: 2rem;
-            }
+        .header__arrow {
+            grid-area: arrow;
+            position: absolute;
+            left: 50%;
+            width: 2rem;
+            transform: translate(-50%);
         }
     }
 }
