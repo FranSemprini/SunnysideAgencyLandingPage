@@ -1,0 +1,23 @@
+body main .main__headerImg {
+  background-image: url("../images/mobile/image-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 750px;
+  height: 1076px; }
+
+body .sect__graphicDesign .graphicDesign__img {
+  background-image: url("../images/mobile/image-graphic-design.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 750px;
+  height: 1200px; }
+
+body .sect__photography .photography__img {
+  background-image: url("../images/mobile/image-photography.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 750px;
+  height: 1200px; }
