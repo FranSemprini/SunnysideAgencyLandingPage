@@ -37,7 +37,17 @@ main .main__headerImg .headerImg__header {
       height: 250px;
       background: white;
       color: #5a636c;
-      list-style: none; }
+      list-style: none;
+      z-index: 99; }
+      main .main__headerImg .headerImg__header .header__container nav .menu::before {
+        content: "";
+        position: absolute;
+        right: 0%;
+        top: -29px;
+        width: 0;
+        height: 0;
+        border-left: 33px solid transparent;
+        border-bottom: 34px solid white; }
       main .main__headerImg .headerImg__header .header__container nav .menu li {
         display: flex;
         flex-direction: column;
@@ -59,6 +69,7 @@ main .main__headerImg .headerImg__header {
     main .main__headerImg .headerImg__header .header__container nav .showMenu {
       transform: translatex(-25px); }
     main .main__headerImg .headerImg__header .header__container .hamburger {
+      position: fixed;
       z-index: 100;
       border: none;
       background-color: unset;
@@ -130,32 +141,33 @@ main .main__headerImg .header__arrow {
     color: black;
     text-transform: uppercase; }
 
-.graphPhoto {
-  color: #25564b;
-  text-align: center; }
-  .graphPhoto h3 {
+.graphPhoto .sect__graphicDesign {
+  display: grid;
+  position: relative;
+  grid-template-rows: 60% 15%;
+  gap: 0;
+  grid-template-areas: ". " "title" "paragraph";
+  text-align: center;
+  color: #25564b; }
+  .graphPhoto .sect__graphicDesign img {
+    width: 100%;
+    height: auto; }
+  .graphPhoto .sect__graphicDesign h3 {
     font-family: "Fraunces";
     font-size: 1.6rem;
     font-weight: 900;
-    padding-top: 380px; }
-  .graphPhoto p {
-    font-family: "Barlow";
-    font-size: 0.8rem;
-    line-height: 25px;
-    margin: 0 25px 20px 25px;
-    margin-top: 35px; }
-  .graphPhoto .sect__graphicDesign .graphicDesign__img {
-    background-image: url("../images/mobile/image-graphic-design.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 570px; }
-  .graphPhoto .sect__photography .photography__img {
-    background-image: url("../images/mobile/image-photography.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 570px; }
+    position: absolute;
+    grid-area: title;
+    width: 100%; }
+  .graphPhoto .sect__graphicDesign .photography__paragraph {
+    position: absolute;
+    grid-area: paragraph;
+    width: 100%; }
+    .graphPhoto .sect__graphicDesign .photography__paragraph p {
+      font-family: "Barlow";
+      font-size: 0.9rem;
+      line-height: 25px;
+      padding: 0 1rem; }
 
 .sect__testimonials {
   background-color: rgba(254, 120, 103, 0.093);
