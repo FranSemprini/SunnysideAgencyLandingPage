@@ -24,6 +24,20 @@
     height: auto;
 }
 
+@mixin transStandDesk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0;
+    grid-template-areas: 
+    "article .";
+    article {
+        grid-area: article;
+        height: 100%;
+    }
+}
+
+
 $fontFamilies : (
     barlow: 'Barlow',
     fraunces: 'Fraunces'
@@ -44,3 +58,7 @@ $nColors : (
  Grayish_blue: hsl(210, 4%, 67%),
  White: hsl(0, 0%, 100%)
 );
+
+.hidden {
+    display: none;
+}

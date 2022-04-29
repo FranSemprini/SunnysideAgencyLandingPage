@@ -20,7 +20,7 @@ main {
 
             .header__container {
                 position: absolute;
-                @include myFlex (flex, row, nowrap, space-between, baseline);
+                @include myFlex (flex, row, nowrap, space-between, flex-end);
                 width: 100%;
 
                 .header__title {
@@ -44,7 +44,6 @@ main {
                         color: map-get($nColors, Very_dark_grayish_blue);
                         list-style: none;
                         z-index: 99;
-
 
                         &::before {
                             content: "";
@@ -74,7 +73,6 @@ main {
                             text-transform: uppercase;
                             font-family: map-get($fontFamilies, fraunces);
                             font-size: 0.8rem;
-
                         }
                     }
 
@@ -213,22 +211,7 @@ main {
             }
         }
     }
-
-    // .graphicDesign__img {
-    // background-image: url("../images/mobile/image-graphic-design.jpg");
-    // @include bgImgProp;
-    // height: 570px;
 }
-
-// .sect__photography {
-//     .photography__img {
-//         background-image: url("../images/mobile/image-photography.jpg");
-//         @include bgImgProp;
-//         height: 570px;
-//     }
-// }
-
-
 
 .sect__testimonials {
     background-color: map-get($pColors, Soft_red);
@@ -244,42 +227,44 @@ main {
         color: map-get($nColors, Grayish_blue);
     }
 
-    .testimonial {
+    .testimonails__container {
         @include myFlex (flex, column, nowrap, center, center);
 
-        img {
-            width: 4rem;
-            border-radius: 50%;
-            margin: 1rem 0 2rem 0;
-        }
+        .testimonial {
+            @include myFlex (flex, column, nowrap, center, center);
 
-        p {
-            text-align: center;
-            line-height: 30px;
-            font-family: map-get($fontFamilies, barlow);
-            color: map-get($nColors, Dark_grayish_blue);
-        }
-
-        .testimonial__nameCharge {
-            display: block;
-            text-align: center;
-            margin: 2rem 0;
-
-            h5 {
-                font-family: map-get($fontFamilies, fraunces);
-                font-weight: 900;
+            img {
+                width: 4rem;
+                border-radius: 50%;
+                margin: 1rem 0 2rem 0;
             }
 
             p {
-                font-size: 0.8rem;
-                color: map-get($nColors, Grayish_blue);
+                text-align: center;
+                line-height: 30px;
+                font-family: map-get($fontFamilies, barlow);
+                color: map-get($nColors, Dark_grayish_blue);
+            }
 
+            .testimonial__nameCharge {
+                display: block;
+                text-align: center;
+                margin: 2rem 0;
+
+                h5 {
+                    font-family: map-get($fontFamilies, fraunces);
+                    font-weight: 900;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                    color: map-get($nColors, Grayish_blue);
+
+                }
             }
         }
     }
 }
-
-
 
 .photos {
     @include myFlex(flex, row, wrap, center, center);
@@ -301,6 +286,116 @@ main {
     img {
         @include respPhoto;
     }
+}
 
+@media screen and (min-width: 722px) {
+    main {
+        .main__headerImg {
+            .headerImg__header {
+                grid-template-rows: 20% 28%;
 
+                .header__background--mobile {
+                    display: none;
+                }
+
+                .header__background--desktop {
+                    background-image: url("../images/desktop/image-header.jpg");
+                    @include bgImgProp;
+                    height: 700px;
+                }
+
+                .header__container {
+                    align-items: baseline;
+
+                    nav {
+                        .menu {
+                            display: none;
+                        }
+
+                        .menu--desktop {
+                            @include myFlex(flex, row, nowrap, center, center);
+
+                            li {
+                                list-style: none;
+                                color: white;
+                                font-family: map-get($fontFamilies, barlow);
+                                margin: 0 1.5rem;
+
+                            }
+
+                            .contact {
+                                background-color: map-get($nColors, white);
+                                border-radius: 22px;
+                                padding: 8px 15px;
+                                color: black;
+                                text-transform: uppercase;
+                                font-family: map-get($fontFamilies, fraunces);
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+
+                    .hamburger {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .transformStandout {
+        .transformStandout_img--mobile {
+            display: none;
+        }
+
+        .transformStandout_img--desktop {
+            display: block;
+        }
+    }
+
+    .graphPhoto {
+        .graphicDesign__img--mobile {
+            display: none;
+        }
+
+        .graphicDesign__img--desktop {
+            display: block;
+        }
+    }
+}
+
+;
+
+@media screen and (min-width: 1000px) {
+
+    .transformStandout {
+        .sect__imgTransform {
+            @include transStandDesk;
+        }
+
+        .sect__imgStandOut {
+            @include transStandDesk;
+            grid-template-areas:
+                ". article";
+
+        }
+    }
+
+    .graphPhoto {
+        @include transStandDesk;
+    }
+
+    .sect__testimonials {
+        .testimonails__container {
+            flex-direction: row;
+        }
+    }
+
+    .photos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "photo1 photo2 photo3 photo4"
+        ;
+    }
 }
