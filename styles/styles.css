@@ -22,7 +22,7 @@ main .main__headerImg .headerImg__header {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     width: 100%; }
     main .main__headerImg .headerImg__header .header__container .header__title {
       color: white;

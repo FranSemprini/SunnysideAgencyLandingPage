@@ -20,7 +20,7 @@ main {
 
             .header__container {
                 position: absolute;
-                @include myFlex (flex, row, nowrap, space-between, flex-end);
+                @include myFlex (flex, row, nowrap, space-between, center);
                 width: 100%;
 
                 .header__title {
