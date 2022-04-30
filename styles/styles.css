@@ -39,7 +39,6 @@ main .main__headerImg .headerImg__header {
       right: 0;
       height: 250px;
       background: white;
-      color: #5a636c;
       list-style: none;
       z-index: 99; }
       main .main__headerImg .headerImg__header .header__container nav .menu::before {
@@ -60,15 +59,18 @@ main .main__headerImg .headerImg__header {
         color: #818498;
         font-family: "Barlow";
         margin: 30px 0; }
+        main .main__headerImg .headerImg__header .header__container nav .menu li a {
+          color: #5a636c; }
       main .main__headerImg .headerImg__header .header__container nav .menu .contact {
         background-color: #fad400;
         border-radius: 22px;
         margin: 0 80px;
         padding: 14px 0;
-        color: black;
         text-transform: uppercase;
         font-family: "Fraunces";
         font-size: 0.8rem; }
+        main .main__headerImg .headerImg__header .header__container nav .menu .contact a {
+          color: black; }
     main .main__headerImg .headerImg__header .header__container nav .showMenu {
       transform: translatex(-25px); }
     main .main__headerImg .headerImg__header .header__container .hamburger {
