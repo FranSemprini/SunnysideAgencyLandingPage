@@ -39,6 +39,10 @@ footer {
             opacity: .7;
             margin: 0 1rem;
             font-family: map-get($fontFamilies, barlow);
+            transition: color .3s;
+            &:hover {
+                color: white;
+            }
         }
         
     }
@@ -48,6 +52,10 @@ footer {
         text-align: center;
         a {
             margin: 0 0.7rem;
+            transition: filter .3s;
+            &:hover {
+                filter: brightness(0) invert(1);
+            }
         }
     }
 }

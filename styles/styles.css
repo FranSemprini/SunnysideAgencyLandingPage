@@ -142,7 +142,26 @@ main .main__headerImg .header__arrow {
     font-weight: 800;
     margin-top: 40px;
     color: black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1; }
+    .transformStandout article a:after {
+      content: '';
+      border-radius: 5px;
+      background-color: yellow;
+      opacity: 0.3;
+      position: absolute;
+      width: 140px;
+      height: 9px;
+      top: 13px;
+      left: -10px;
+      z-index: -1;
+      transition: all 0.5s; }
+    .transformStandout article a:hover:after {
+      opacity: 0.6; }
+
+.transformStandout .sect__imgStandOut a:after {
+  background-color: rgba(255, 0, 0, 0.729); }
 
 .graphPhoto .sect__graphicDesign {
   display: grid;
@@ -262,13 +281,22 @@ main .main__headerImg .header__arrow {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        margin-right: 1rem; }
         main .main__headerImg .headerImg__header .header__container nav .menu--desktop li {
           list-style: none;
-          color: white;
-          font-family: "Barlow";
-          margin: 0 1.5rem; }
-        main .main__headerImg .headerImg__header .header__container nav .menu--desktop .contact {
+          margin: 0 0.5rem; }
+          main .main__headerImg .headerImg__header .header__container nav .menu--desktop li a {
+            color: white;
+            font-family: "Barlow";
+            font-size: 0.8rem;
+            padding: 8px 15px; }
+            main .main__headerImg .headerImg__header .header__container nav .menu--desktop li a:hover {
+              background-color: rgba(255, 255, 255, 0.362);
+              border-radius: 22px;
+              color: white;
+              transition: all 0.5s; }
+        main .main__headerImg .headerImg__header .header__container nav .menu--desktop .contact a {
           background-color: white;
           border-radius: 22px;
           padding: 8px 15px;
@@ -361,10 +389,16 @@ footer {
       color: #25564b;
       opacity: .7;
       margin: 0 1rem;
-      font-family: "Barlow"; }
+      font-family: "Barlow";
+      transition: color .3s; }
+      footer .links a:hover {
+        color: white; }
   footer .socialMedia {
     width: 100%;
     margin: 3.5rem 3rem;
     text-align: center; }
     footer .socialMedia a {
-      margin: 0 0.7rem; }
+      margin: 0 0.7rem;
+      transition: filter .3s; }
+      footer .socialMedia a:hover {
+        filter: brightness(0) invert(1); }
