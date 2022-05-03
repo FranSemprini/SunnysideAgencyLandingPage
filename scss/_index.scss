@@ -197,6 +197,7 @@ main {
 .graphPhoto {
 
     .sect__graphicDesign {
+        grid-area: photo;
         display: grid;
         position: relative;
         grid-template-rows: 60% 15%;
@@ -235,6 +236,14 @@ main {
                 padding: 0 1rem;
             }
         }
+    }
+
+    .sect__graphicDesign--graphic {
+        grid-area: graph;
+    }
+
+    .sect__graphicDesign--photo {
+        grid-area: photo;
     }
 }
 
@@ -423,6 +432,7 @@ main {
 
     .graphPhoto {
         @include transStandDesk;
+        grid-template-areas: "graph photo";
     }
 
     .sect__testimonials {

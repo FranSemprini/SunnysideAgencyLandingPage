@@ -166,6 +166,7 @@ main .main__headerImg .header__arrow {
   background-color: rgba(255, 0, 0, 0.729); }
 
 .graphPhoto .sect__graphicDesign {
+  grid-area: photo;
   display: grid;
   position: relative;
   grid-template-rows: 60% 15%;
@@ -192,6 +193,12 @@ main .main__headerImg .header__arrow {
       font-size: 0.9rem;
       line-height: 25px;
       padding: 0 1rem; }
+
+.graphPhoto .sect__graphicDesign--graphic {
+  grid-area: graph; }
+
+.graphPhoto .sect__graphicDesign--photo {
+  grid-area: photo; }
 
 .sect__testimonials {
   background-color: rgba(254, 120, 103, 0.093);
@@ -342,7 +349,8 @@ main .main__headerImg .header__arrow {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 0;
-    grid-template-areas: "article ."; }
+    grid-template-areas: "article .";
+    grid-template-areas: "graph photo"; }
     .graphPhoto article {
       grid-area: article;
       height: 100%; }
